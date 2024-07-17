@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student Login</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-weight: bold;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin-left: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1.5px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
+            width:90%;
+        }
+        .input-group div {
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: normal;
+            color: #C62828;
+            display: none;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin">
+        <img src="login image.jpg" width="300" height="325">
+    </div>
+    <div class="container">
+        <center>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+        </center>
+        <h1 id="login">Student's Login</h1>
+        <form name="form" method="post" onsubmit="return validated()">
+            <div class="header"></div>
+            <div class="input-group">
+                <label for="username">Student Name:</label>
+                <input type="text" name="username" placeholder="Enter your name">
+                <div id="username_error">Please enter a valid username</div>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Enter your password">
+                <div id="password_error">Please enter password</div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="student script.js"></script>
+</body>
+</html>
+

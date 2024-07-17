@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table {
+            margin-top: 3px;
+        }
+        body {
+            background-color: azure;
+        }
+        select {
+            background-color: rgb(194, 234, 217);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center mb-4">Student Marks</h2>
+        <h6 class="font-weight-bold">Name: Ranjith R</h6>
+        <h6>Register Number: 201008061</h6>
+        <h6>Group: Computer Science</h6>
+        <h6>Class: 11th</h6>
+        <div>
+        <tr>
+            <td><label for="examSelect"><h6>Examination:</h6></label></td>
+          <td>
+            <select id="examSelect" onchange="showMarks()">
+                <option value=""></option>
+                <option value="quarterly">Quarterly Exam</option>
+                <option value="halfyearly">Halfyearly Exam</option>
+                <option value="annual">Annual Exam</option>
+            </select>
+          </td>
+        </tr>
+        </div>
+        <div class="table table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Subjects</th>
+                        <th>Marks</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody id="marksTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const marksData = {
+            quarterly: [
+                { subject: 'Tamil', marks: 86, result: 'pass' },
+                { subject: 'English', marks: 80, result: 'pass' },
+                { subject: 'Computer Science', marks: 93, result: 'pass' },
+                { subject: 'Maths', marks: 72, result: 'pass' },
+                { subject: 'Physics', marks: 70, result: 'pass' },
+                { subject: 'Chemistry', marks: 76, result: 'pass' },
+                { total: '477/600', result: 'pass' }
+            ],
+            halfyearly: [
+                { subject: 'Tamil', marks: 88, result: 'pass' },
+                { subject: 'English', marks: 82, result: 'pass' },
+                { subject: 'Computer Science', marks: 94, result: 'pass' },
+                { subject: 'Maths', marks: 75, result: 'pass' },
+                { subject: 'Physics', marks: 72, result: 'pass' },
+                { subject: 'Chemistry', marks: 78, result: 'pass' },
+                { total: '489/600', result: 'pass' }
+            ],
+            annual: [
+                { subject: 'Tamil', marks: 90, result: 'pass' },
+                { subject: 'English', marks: 85, result: 'pass' },
+                { subject: 'Computer Science', marks: 95, result: 'pass' },
+                { subject: 'Maths', marks: 78, result: 'pass' },
+                { subject: 'Physics', marks: 75, result: 'pass' },
+                { subject: 'Chemistry', marks: 80, result: 'pass' },
+                { total: '503/600', result: 'pass' }
+            ]
+        };
+
+        function showMarks() {
+            const examSelect = document.getElementById('examSelect');
+            const marksTable = document.getElementById('marksTable');
+            
+            const selectedExam = examSelect.value;
+
+            if (selectedExam) {
+                marksTable.innerHTML = '';
+
+                marksData[selectedExam].forEach((entry, index) => {
+                    const row = document.createElement('tr');
+                    const subjectCell = document.createElement('td');
+                    const marksCell = document.createElement('td');
+                    const resultCell = document.createElement('td');
+
+                    if (entry.subject) {
+                        subjectCell.textContent = entry.subject;
+                        marksCell.textContent = entry.marks;
+                        resultCell.textContent = entry.result;
+                    } else {
+                        subjectCell.textContent = 'Total Marks';
+                        marksCell.textContent = entry.total;
+                        resultCell.textContent = entry.result;
+                    }
+
+                    row.appendChild(subjectCell);
+                    row.appendChild(marksCell);
+                    row.appendChild(resultCell);
+
+                    marksTable.appendChild(row);
+                });
+            } else {
+                marksTable.innerHTML = ''; // Clear table if no exam is selected
+            }
+        }
+    </script>
+</body>
+</html>

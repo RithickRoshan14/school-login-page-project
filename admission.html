@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissin Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .row{
+            margin-right:70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" >
+        <div class="row">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Admissions Details</h1>
+                    <hr>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Group</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ranjith R</td>
+                                <td>ranjith@gmail.com</td>
+                                <td>0976267828</td>
+                                <td>Computer Science</td>
+                                <td>Active</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Approveed</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Dinesh S</td>
+                                <td>dinesh@gmail.com</td>
+                                <td>7456825098</td>
+                                <td>Biology</td>
+                                <td>Pending</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Approve</button>
+                                    <button class="btn btn-sm btn-danger">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Rohind M</td>
+                                <td>rohind@gmail.com</td>
+                                <td>9637542679</td>
+                                <td>Accounts</td>
+                                <td>InActive</td>
+                                <td>
+                                 <button class="btn btn-sm btn-danger">Rejected</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Teachers Dashboard</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-color: rgb(193, 202, 204);
+        }
+        .header{
+            background-color: rgb(7, 164, 203);
+            padding-left:40px;;
+            line-height:50px;
+            display:flex;
+            justify-content: space-between; 
+            padding-right:30px; 
+            padding-top: 40px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+        .logout{
+            padding-bottom:20px;
+        }
+        .container{
+            margin-top: 50px;
+            text-align: center;
+        }    
+        .card-body{
+            background-color: rgb(243, 245, 248);
+        }
+        h5{
+            font-weight: bold;
+        }
+        a{
+            text-decoration: none;
+        }
+        .table{
+            text-align: center;
+        }
+        .username{
+            text-align: center;
+            color:rgb(10, 3, 0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h3> <svg xmlns="http://www.w3.org/2000/svg" width="36" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>Teachers Dashboard</h3>
+          <div class="username">
+            <h6>welcom,<span id="username"></span></h6>
+        <div class="logout">
+            <a href="teacher.html" class="btn btn-light">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-5 shadow-sm">
+                <div class="card-body">
+                    <h5>Student Information</h5>
+                    <p>Manage student marks and records.</p>
+                    <a href="t.studentdetails.html" class="btn btn-dark">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5>Time Table</h5>
+                    <p>Manage class schedules and details.</p>
+                    <a href="t.timetable.html" class="btn btn-dark">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script>
+    var username=sessionStorage.getItem("username");
+
+    document.getElementById("username").textContent=username;
+</script>
+    
+</body>
+</html>
